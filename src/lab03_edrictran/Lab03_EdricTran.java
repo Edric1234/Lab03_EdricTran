@@ -76,34 +76,15 @@ public class Lab03_EdricTran extends Application {
        gp.add(clear, 1, 4);
        
        scene.setOnKeyReleased(event -> {
-               boolean fNameTextFilled = false;
-               boolean lNameTextFilled = false;
-               boolean emailTextFilled = false;
-               boolean pwTextFilled = false;
+               boolean filled = false;
                
-               if (!fNameText.getText().isEmpty()) {
-                   fNameTextFilled = true;
+               if (!fNameText.getText().isEmpty() && !lNameText.getText().isEmpty()
+                       && !emailText.getText().isEmpty() && !pwText.getText().isEmpty()) {
+                   filled = true;
                } else {
-                   fNameTextFilled = false;
+                   filled = false;
                }
-               if (!lNameText.getText().isEmpty()) {
-                   lNameTextFilled = true;
-               } else {
-                   lNameTextFilled = false;
-               }
-               if (!emailText.getText().isEmpty()) {
-                   emailTextFilled = true;
-               } else {
-                   emailTextFilled = false;
-               }
-               if (!pwText.getText().isEmpty()) {
-                   pwTextFilled = true;
-               } else {
-                   pwTextFilled = false;
-               }
-               
-               if (fNameTextFilled && lNameTextFilled && emailTextFilled
-                       && pwTextFilled) {
+               if (filled) {
                    reg.setDisable(false);
                } else {
                    reg.setDisable(true);
